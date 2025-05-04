@@ -1,0 +1,101 @@
+{
+  "name": "MultiSoftwareVN",
+  "id": "/subscriptions/48ad2e94-d02d-4d69-a27c-320c212cac9b/resourceGroups/lamia-2025/providers/Microsoft.Network/virtualNetworks/MultiSoftwareVN",
+  "etag": "W/\"a54d341b-9661-4e78-9f91-f901f335de86\"",
+  "type": "Microsoft.Network/virtualNetworks",
+  "location": "northeurope",
+  "tags": {},
+  "properties": {
+    "provisioningState": "Succeeded",
+    "resourceGuid": "91ad510b-7f28-4efc-995f-edda5ce7ea9a",
+    "addressSpace": {
+      "addressPrefixes": ["10.0.0.0/16"]
+    },
+    "encryption": {
+      "enabled": true,
+      "enforcement": "AllowUnencrypted"
+    },
+    "subnets": [
+      {
+        "name": "AzureFirewallSubnet",
+        "id": "/subscriptions/48ad2e94-d02d-4d69-a27c-320c212cac9b/resourceGroups/lamia-2025/providers/Microsoft.Network/virtualNetworks/MultiSoftwareVN/subnets/AzureFirewallSubnet",
+        "etag": "W/\"a54d341b-9661-4e78-9f91-f901f335de86\"",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "addressPrefixes": ["10.0.1.64/26"],
+          "delegations": [],
+          "privateEndpointNetworkPolicies": "Disabled",
+          "privateLinkServiceNetworkPolicies": "Enabled"
+        },
+        "type": "Microsoft.Network/virtualNetworks/subnets"
+      },
+      {
+        "name": "AzureBastionSubnet",
+        "id": "/subscriptions/48ad2e94-d02d-4d69-a27c-320c212cac9b/resourceGroups/lamia-2025/providers/Microsoft.Network/virtualNetworks/MultiSoftwareVN/subnets/AzureBastionSubnet",
+        "etag": "W/\"a54d341b-9661-4e78-9f91-f901f335de86\"",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "addressPrefixes": ["10.0.1.0/26"],
+          "ipConfigurations": [
+            {
+              "id": "/subscriptions/48ad2e94-d02d-4d69-a27c-320c212cac9b/resourceGroups/LAMIA-2025/providers/Microsoft.Network/bastionHosts/MULTISOFTWAREVN-BASTION/bastionHostIpConfigurations/IPCONF"
+            }
+          ],
+          "delegations": [],
+          "privateEndpointNetworkPolicies": "Disabled",
+          "privateLinkServiceNetworkPolicies": "Enabled"
+        },
+        "type": "Microsoft.Network/virtualNetworks/subnets"
+      },
+      {
+        "name": "default",
+        "id": "/subscriptions/48ad2e94-d02d-4d69-a27c-320c212cac9b/resourceGroups/lamia-2025/providers/Microsoft.Network/virtualNetworks/MultiSoftwareVN/subnets/default",
+        "etag": "W/\"a54d341b-9661-4e78-9f91-f901f335de86\"",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "addressPrefixes": ["10.0.0.0/24"],
+          "serviceAssociationLinks": [
+            {
+              "name": "AppServiceLink",
+              "id": "/subscriptions/48ad2e94-d02d-4d69-a27c-320c212cac9b/resourceGroups/lamia-2025/providers/Microsoft.Network/virtualNetworks/MultiSoftwareVN/subnets/default/serviceAssociationLinks/AppServiceLink",
+              "etag": "W/\"a54d341b-9661-4e78-9f91-f901f335de86\"",
+              "type": "Microsoft.Network/virtualNetworks/subnets/serviceAssociationLinks",
+              "properties": {
+                "provisioningState": "Succeeded",
+                "linkedResourceType": "Microsoft.Web/serverfarms",
+                "link": "/subscriptions/48ad2e94-d02d-4d69-a27c-320c212cac9b/resourceGroups/lamia-2025/providers/Microsoft.Web/serverfarms/ASP-lamia2025-8404",
+                "enabledForArmDeployments": false,
+                "allowDelete": false,
+                "subnetId": "00000000-0000-0000-0000-000000000000",
+                "locations": []
+              }
+            }
+          ],
+          "serviceEndpoints": [],
+          "delegations": [
+            {
+              "name": "delegation",
+              "id": "/subscriptions/48ad2e94-d02d-4d69-a27c-320c212cac9b/resourceGroups/lamia-2025/providers/Microsoft.Network/virtualNetworks/MultiSoftwareVN/subnets/default/delegations/delegation",
+              "etag": "W/\"a54d341b-9661-4e78-9f91-f901f335de86\"",
+              "properties": {
+                "provisioningState": "Succeeded",
+                "serviceName": "Microsoft.Web/serverfarms",
+                "actions": ["Microsoft.Network/virtualNetworks/subnets/action"]
+              },
+              "type": "Microsoft.Network/virtualNetworks/subnets/delegations"
+            }
+          ],
+          "privateEndpointNetworkPolicies": "Disabled",
+          "privateLinkServiceNetworkPolicies": "Enabled"
+        },
+        "type": "Microsoft.Network/virtualNetworks/subnets"
+      }
+    ],
+    "virtualNetworkPeerings": [],
+    "enableDdosProtection": true,
+    "ddosProtectionPlan": {
+      "id": "/subscriptions/48ad2e94-d02d-4d69-a27c-320c212cac9b/resourceGroups/lamia-2025/providers/Microsoft.Network/ddosProtectionPlans/multisoftDDos"
+    }
+  },
+  "apiVersion": "2024-01-01"
+}
